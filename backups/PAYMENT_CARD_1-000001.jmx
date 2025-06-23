@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.4" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Blazemeter test plan" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.${project.version}. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers"/>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies">
+          <elementProp name="anonymous_session_id" elementType="Cookie" testname="anonymous_session_id">
+            <stringProp name="Cookie.value">07d72fcc-eb9a-4188-884d-e52963ce47d8</stringProp>
+            <stringProp name="Cookie.domain"></stringProp>
+            <stringProp name="Cookie.path"></stringProp>
+            <boolProp name="Cookie.secure">false</boolProp>
+            <longProp name="Cookie.expires">1747396397947</longProp>
+            <boolProp name="Cookie.path_specified">true</boolProp>
+            <boolProp name="Cookie.domain_specified">true</boolProp>
+          </elementProp>
+          <elementProp name="PAYUSESSID" elementType="Cookie" testname="PAYUSESSID">
+            <stringProp name="Cookie.value">ae5t9ihunc9tu3p2vqe2vqn2pm</stringProp>
+            <stringProp name="Cookie.domain"></stringProp>
+            <stringProp name="Cookie.path"></stringProp>
+            <boolProp name="Cookie.secure">false</boolProp>
+            <longProp name="Cookie.expires">1747396397947</longProp>
+            <boolProp name="Cookie.path_specified">true</boolProp>
+            <boolProp name="Cookie.domain_specified">true</boolProp>
+          </elementProp>
+        </collectionProp>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://front-test.oriflame-test.ru/api/v1/order/place-order" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.value">{&quot;paymentMethodId&quot;:&quot;7305a3d7-d940-482c-a7e0-b4632668c760&quot;,&quot;paymentProviderId&quot;:&quot;c66f26b0-d5de-4abc-9406-2c2f0e428af8&quot;,&quot;salesChannel&quot;:&quot;SITE&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">front-test.oriflame-test.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">api/v1/order/place-order</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">front-test.oriflame-test.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://front-test.oriflame-test.ru/order</stringProp>
+              </elementProp>
+              <elementProp name="anonymous-session-id" elementType="Header">
+                <stringProp name="Header.name">anonymous-session-id</stringProp>
+                <stringProp name="Header.value">07d72fcc-eb9a-4188-884d-e52963ce47d8</stringProp>
+              </elementProp>
+              <elementProp name="authorization" elementType="Header">
+                <stringProp name="Header.name">authorization</stringProp>
+                <stringProp name="Header.value">Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtM3h3d0NRQnFlT2RNR0xpbG10YW93VUlYNmhOMEhSbTdhdVhQZ3NJeE9rIn0.eyJleHAiOjE3NDczOTQ2NzYsImlhdCI6MTc0NzM5MTA3NiwiYXV0aF90aW1lIjoxNzQ3MzkwMzQ3LCJqdGkiOiI3NmU0NzJhNC0wZWJkLTQ1YjQtYmVlNy0wNWJlODgwYmU5NTEiLCJpc3MiOiJodHRwczovL2xvZ2luLXRlc3Qub3JpZmxhbWUtdGVzdC5ydS9hdXRoL3JlYWxtcy9vcmlmbGFtZSIsInN1YiI6IjkyZTRkMTMzLWEyMmMtNDliYy04NWRhLWM5ZWFlM2FhNDk5YyIsInR5cCI6IkJlYXJlciIsImF6cCI6Im9yaWZsYW1lIiwic2lkIjoiZGQ0M2M4MGUtMTlmNC00Yzk5LTliNGQtY2Y0MTM4ZTc1NjI3IiwiYWNyIjoiMCIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vZnJvbnQtdGVzdC5vcmlmbGFtZS10ZXN0LnJ1IiwiaHR0cDovL2xvY2FsaG9zdDo1MTczIiwiaHR0cHM6Ly9mcm9udC10ZXN0Lm9yaWZsYW1lLXRlc3QucnUiLCJodHRwczovL3d3dy5rZXljbG9hay5vcmciXSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsInVzZXJfdHlwZSI6IkJFQVVUWSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6ItCY0LLQsNC9INCf0LXRgtGA0L7QsiIsInByZWZlcnJlZF91c2VybmFtZSI6IjM1MTE3ODY5IiwibWlkZGxlX25hbWUiOiLQodC40LTQvtGA0L7QstC40YciLCJnaXZlbl9uYW1lIjoi0JjQstCw0L0iLCJmYW1pbHlfbmFtZSI6ItCf0LXRgtGA0L7QsiIsImVtYWlsIjoiMTIzMTIzMTI0MUB5YW5kZXgucnUiLCJwZXJzb25faWQiOiJhOTlhOWFlYi1iYmM0LTQ3MTUtYjJlYi03N2UzZWY5MTUzZTUiLCJ1c2VybmFtZSI6IjM1MTE3ODY5IiwiZ3JvdXAiOlsiQmVhdXR5UGFydG5lciIsImN1c3RvbWVyIiwicmVjcnVpdCJdfQ.KyVRFKTbqg7b4Pq-aZNA9TLRtnakNZSaGDbABVmPENqkMIjTTUn8MllWKokixzhJAdLuglLsu8YP0TdWscwepyy1QpFgkQUD1CcfZ87cL6nqqmxceKLBP78C_l41lMCoXDAguVi69YrxRoOF0EeJC3fTAbsBje6-RTeDiTrnncVjEupmGI_r3e2sX6JC0exHurvrKgJFcIctm1A5OGcRboZHYfKE-BmmClEXNd77cbuHECCASu-MYqBdYRbZTrFeZq6ahwd9mxzHuebL_SkZxM-85uaZH5HNmpDuJJP8KAmsTdlLywZsRpgfZTO41VoUlx7Y6JGmFyPQd5uCsva4XA</stringProp>
+              </elementProp>
+              <elementProp name="content-type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">139</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://front-test.oriflame-test.ru</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="TE" elementType="Header">
+                <stringProp name="Header.name">TE</stringProp>
+                <stringProp name="Header.value">trailers</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>0.0</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">0.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/pay/v2/?action=continue-payment-with-hosted-page&amp;id=2Xrl83J0meyNwnnucr-6ap7HuLI" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="action" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">action</stringProp>
+                <stringProp name="Argument.value">continue-payment-with-hosted-page</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">id</stringProp>
+                <stringProp name="Argument.value">2Xrl83J0meyNwnnucr-6ap7HuLI</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">pay/v2/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://front-test.oriflame-test.ru/</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">cross-site</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0, i</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[2]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>854.8000000000001</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">1709.6000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/pay/v2/" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">pay/v2/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://front-test.oriflame-test.ru/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">cross-site</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=0, i</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[3]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>264.40000000000003</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">528.8000000000001</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/favicon.ico" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">favicon.ico</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru/pay/v2/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">image</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">no-cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=6</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[4]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>234.4</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">468.8</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/statistics/index.php/v2/fingerprint_b?apiUserName=payu_test&amp;tid=wdf4112-1747392555-4e11-2d45682d857d&amp;sessionId=wdf4112-1747392555-4e11-2d45682d857d&amp;text=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&amp;userId=270996d016550d46733de71cb5ea232c" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="apiUserName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">apiUserName</stringProp>
+                <stringProp name="Argument.value">payu_test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sessionId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">sessionId</stringProp>
+                <stringProp name="Argument.value">wdf4112-1747392555-4e11-2d45682d857d</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="text" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">text</stringProp>
+                <stringProp name="Argument.value">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</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="userId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">userId</stringProp>
+                <stringProp name="Argument.value">270996d016550d46733de71cb5ea232c</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="tid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">tid</stringProp>
+                <stringProp name="Argument.value">wdf4112-1747392555-4e11-2d45682d857d</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">statistics/index.php/v2/fingerprint_b</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru/pay/v2/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[5]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>2.0</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">4.0</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/statistics/index.php/v2/tracking_b?apiUserName=payu_test&amp;tid=wdf4112-1747392555-4e11-2d45682d857d&amp;sessionId=wdf4112-1747392555-4e11-2d45682d857d&amp;userId=270996d016550d46733de71cb5ea232c" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="apiUserName" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">apiUserName</stringProp>
+                <stringProp name="Argument.value">payu_test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="sessionId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">sessionId</stringProp>
+                <stringProp name="Argument.value">wdf4112-1747392555-4e11-2d45682d857d</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="userId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">userId</stringProp>
+                <stringProp name="Argument.value">270996d016550d46733de71cb5ea232c</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="tid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">tid</stringProp>
+                <stringProp name="Argument.value">wdf4112-1747392555-4e11-2d45682d857d</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.value">Eks2DBsbBhsqBhwHHQwbS1NZRUsIGQA8GgwbJwgEDEtTSxkIEBw2HQwaHUtFSxwaDBsgDUtTS1teWVBQXw1ZWF9cXFkNXV9eWloNDF5YCgtcDAhbWlsKS0VLChwbGwwHHT0ABAwvBhs6DBsfDBs9AAQMS1NZRUsNDB8ACgwgDUtTS1paWVhfXF9dUVlcW1xRWl1eWFtcWFxYX1peWFFaXlhYXFhQXFFcUVxRWl5bWVpeX1tYWVlbW1xcXlBaWlxaWFpQUUtFSx4ADR0BS1NYXlleRUsBDAAOAR1LU1xaWEVLBQgaHSIHBh4HOgwbHwwbPQAEDEtTWUVLGQUIHQ8GGwRLU0seDAtLRUsbDA8MGxsMG0tTSxoIBw0LBhFHEBkEB0cbHEYZCBBGH1tGS0VLHVhLU1heXV5aUFtcXF1QWFlFSx1bS1NYXl1eWlBbXFxcX11YRUsdAA1LU0seDQ9dWFhbRFheXV5aUFtcXFxEXQxYWERbDV1cX1FbDVFcXg1LRUsaDBoaAAYHIA1LU0seDQ9dWFhbRFheXV5aUFtcXFxEXQxYWERbDV1cX1FbDVFcXg1LRUsIGRkFAAoIHQAGByANS1NLHg0PXVhYW0RYXl1eWlBZUV5bRF0PCgtEWgtRUQ1RWVxfXwtcS0VLHBsFS1NLAR0dGRpTRkYaCAcNCwYRRxAZBAdHGxxGGQgQRh9bRktFSx8MGxoABgdLU0tdR1hYR1tLRUsTBgYES1NYRUsMER0bCEtTEksPGQUIHUtTWUVLGh0IHUtTW0VLGRsMHzYaDBoaAAYHNgANGktTMkseDQ9dWFhbRFheXV5aUFlRXltEXQ8KC0RaC1FRDVFZXF9fC1xLNEVLGwwYHAwaHSccBAsMG0tTWEVLDxkuCB0BDBskGktTUVxFSx0bCAoABw5LUxJLDgwdKggHHwgaLxlLU1tcRUsODB0+DAsOBS8ZNgoIBx8IGktTXkVLDgwdPgwLDgUvGTYNGwgeS1NYXkVLDgwdPgwLDgUvGUtTWllFSw4MHSgNDQAdAAYHCAUtDB8ACgwgBw8GS1NZRUsPAAUFLwAHDgwbGRsABx1LU1xeRUsaHQgdHBoqAQwKAhpLU1pFSw0MHyAHDwZLU1tdRUsABwAdPRsICgIABw42HgwLOx0KS1NeRUsABwAdPRsICgIABw5LU15FSw4IHQEMGz0bNggcHQYrGwYeGgwbS1NZRUsOCB0BDBs9G0tTWRRFSwAHDTYZG0tTDwgFGgxFSwUaNhkbS1MdGxwMFEVLABo2BAYLAAUMS1MPCAUaDEVLDA0AHQINS1MyNEVLAgwQLQYeBz0bCAoCS1MyNEVLAgwQPBk9GwgKAktTMjRFSwQGHBoMPRsICgJLUzI0RUsEBhwaDD0bCAoCKgUACgIaS1MyNEVLGQgODDoMBQwKHQAGB0tTMjRFSxkIDgw9GwgKAktTMjRFSxoKGwYFBT0bCAoCS1MyNEVLCBwdBg8ABQU9GwgKAktTMjRFSxwbBRpLUzI0RUsNDB8ACgwkBh0ABgdLUxIURUsEDBsKAQgHHSANS1NLWFlbXktFSxoKGwAZHRpLUzI0RUsADxsIBAwaS1MyNEVLGgAOBwgFGktTEksIHB0GS1NZRUsLCAoCS1NZRUsKBgcdDBEdBEtTWUVLChoAS1NZRUsKHRsFP0tTWUVLDQwfS1NZRUsvWFtLU1lFSxkbAB9LU0RYRUsbHQpLU0sMBBkdEEtFSx0IC0tTWRQU</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">statistics/index.php/v2/tracking_b</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">1748</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru/pay/v2/</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[6]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>0.8</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">1.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://sandbox.ypmn.ru/statistics/index.php" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.domain">sandbox.ypmn.ru</stringProp>
+          <intProp name="HTTPSampler.port">0</intProp>
+          <stringProp name="HTTPSampler.path">statistics/index.php</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru/pay/v2/</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">metrics</stringProp>
+              </elementProp>
+              <elementProp name="Content-Length" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">86</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://sandbox.ypmn.ru</stringProp>
+              </elementProp>
+              <elementProp name="Sec-GPC" elementType="Header">
+                <stringProp name="Header.name">Sec-GPC</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="Priority" elementType="Header">
+                <stringProp name="Header.name">Priority</stringProp>
+                <stringProp name="Header.value">u=4</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp reference="../../../HTTPSamplerProxy[7]/elementProp[2]/collectionProp"/>
+          </HeaderManager>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+            <doubleProp>
+              <name>RandomTimer.range</name>
+              <value>0.8</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+            <stringProp name="ConstantTimer.delay">1.6</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
